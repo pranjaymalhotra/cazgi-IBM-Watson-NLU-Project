@@ -48,14 +48,14 @@ class App extends React.Component {
 
       //Include code here to check the sentiment and fomrat the data accordingly
 
-      this.setState({sentimentOutput:response.data.score});
-      let output = response.data.score;
-      if(response.data.lable === "positive") {
+      this.setState({sentimentOutput:response.data});
+      let output = response.data;
+      if(response.data === "positive") {
         output = <div style={{color:"green",fontSize:20}}>{response.data}</div>
-      } else if (response.data.lable === "negative"){
+      } else if (response.data === "negative"){
         output = <div style={{color:"red",fontSize:20}}>{response.data}</div>
       } else {
-        output = <div style={{color:"orange",fontSize:20}}>{response.data}</div>
+        output = <div style={{color:"yellow",fontSize:20}}>{response.data}</div>
       }
       this.setState({sentimentOutput:output});
     });
